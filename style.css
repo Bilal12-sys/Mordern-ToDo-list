@@ -55,7 +55,6 @@ body.dark .box::before{
     align-items: center;
     justify-content: center;
 }
-
 .box {
     width: 380px;
     max-height: 400px;
@@ -70,9 +69,9 @@ body.dark .box::before{
     flex-direction: column;
     gap: 15px;
     position: relative;
-    overflow: hidden;
-}
 
+    overflow: hidden; /* box itself should NOT scroll */
+}
 .box::before {
     content: "";
     position: absolute;
@@ -208,10 +207,29 @@ body.dark .box::before{
     background: rgba(245, 158, 11, 0.6);
     color: white;
 }
+
 #task {
-    max-height: 280px;
+    flex: 1;
     overflow-y: auto;
-    padding-right: 5px;
+    max-height: 280px;
+    padding-right: 8px; /* space for scrollbar */
+}
+
+#task::-webkit-scrollbar {
+    width: 5px;
+}
+
+#task::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#task::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.152);
+    border-radius: 20px;
+}
+
+#task::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
 }
 
 .task-list {
@@ -343,4 +361,113 @@ body.dark .box::before{
     border-color: #3b82f6;
     background: rgba(255,255,255,0.16);
     box-shadow: 0 0 0 4px rgba(59,130,246,0.18);
+}
+
+
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        max-width: 420px;
+        max-height: 85vh;
+        padding: 18px;
+    }
+
+    .top h2 {
+        font-size: 20px;
+    }
+
+    #inp {
+        padding: 11px 42px 11px 12px;
+    }
+
+    #btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .task-item {
+        padding: 9px 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        overflow: auto; 
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 14px;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .top h2 {
+        font-size: 18px;
+    }
+
+    .top span {
+        font-size: 12px;
+    }
+
+    .top i {
+        font-size: 18px;
+    }
+
+    #inp {
+        font-size: 14px;
+        padding: 10px 40px 10px 12px;
+    }
+
+    #btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .btn2 {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .sp {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .box {
+        padding: 12px;
+    }
+
+    #inp {
+        font-size: 13px;
+    }
+
+    .btn2 {
+        font-size: 11px;
+    }
 }
