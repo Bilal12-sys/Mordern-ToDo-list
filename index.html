@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="box">
+
+            <!-- Top -->
+            <div class="top">
+                <h2>Task<span>Flow</span></h2>
+
+                <div class="circule">
+                    <i class="fa-solid fa-moon" id="light"></i>
+                </div>
+            </div>
+
+            <!-- Inputs -->
+            <div class="input-wrap">
+
+                <input type="text" id="inp" placeholder="Type Task">
+
+                <button id="btn">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+
+            </div>
+
+            
+            <div class="bottom">
+
+                <button id="all" class="btn2">All</button>
+
+                <button id="comp" class="btn2">
+                    Completed
+                </button>
+
+                <button id="pan" class="btn2">
+                    Pending
+                </button>
+
+            </div>
+
+            <!-- Tasks -->
+            <ul id="task"></ul>
+
+        </div>
+
+    </div>
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

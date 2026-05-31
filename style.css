@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #3b82f6);
+    overflow: hidden;
+      transition: 0.3s ease-in-out;
+}
+
+body.dark{
+    background: #000;
+     transition: 0.3s ease-in-out;
+}
+
+body.dark #btn{
+    background: #ffffff9b;
+    color: #000;
+}
+
+body.dark #btn:hover{
+    background: #00000092;
+    color: #fff;
+}
+
+body.dark .box{
+    background: rgba(255, 255, 255, 0.097);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+body.dark .box::before{
+     content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 0, 0.041);
+    border-radius: 50%;
+    top: -70px;
+    right: -70px;
+}
+
+
+
+
+.main {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 380px;
+    max-height: 400px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    top: -70px;
+    right: -70px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top h2 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.top span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.top i {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.top i:hover {
+    color: #ffffff;
+    text-shadow: 0 1px 12px rgba(255, 255, 255, 0.7);
+    transform: rotate(-30deg);
+}
+
+.top i.sun {
+    color: rgba(255, 255, 0, 0.452);
+}
+
+.top i.sun:hover {
+    color: yellow;
+    text-shadow: 0 1px 12px rgba(217, 224, 9, 0.7);
+    transform: rotate(-30deg);
+}
+.input-wrap {
+    position: relative;
+    width: 100%;
+}
+
+#inp {
+    width: 100%;
+    padding: 12px 45px 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#inp::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#inp:focus {
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.4);
+}
+
+#btn {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+#btn:hover {
+    transform: translateY(-50%) scale(1.08);
+    background: #0f172a;
+}
+
+#btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn2 {
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#all:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+#comp:hover {
+    background: rgba(34, 197, 94, 0.5);
+    color: white;
+}
+
+#pan:hover {
+    background: rgba(245, 158, 11, 0.6);
+    color: white;
+}
+#task {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    animation: addTask 0.4s ease forwards;
+    gap: 10px;
+}
+@keyframes addTask {
+    from {
+        opacity: 0;
+        transform: translateY(-2px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.sp {
+    color: white;
+    flex: 1;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+.left input {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.left input:hover {
+    border-color: #60a5fa;
+    transform: scale(1.08);
+}
+
+.left input:checked {
+    background: rgba(8, 8, 8, 0.57);
+    border-color: rgba(203, 207, 213, 0.36);
+}
+
+.left input:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.actions #de:hover {
+    background: rgba(255, 0, 0, 0.654);
+    transform: scale(1.09);
+}
+
+.actions #ed:hover {
+    background: #3b82f6;
+    transform: scale(1.09);
+}
+
+.editInput{
+    width: 100%;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    outline: none;
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.editInput::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+.editInput:focus{
+    border-color: #3b82f6;
+    background: rgba(255,255,255,0.16);
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.18);
+}
