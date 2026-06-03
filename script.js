@@ -77,7 +77,6 @@ function render() {
         if (filter === "pending" && t.done) return;
 
         task.innerHTML += `
-        <ul class="task-list">
             <li class="task-item">
                 <div class="left">
                     <input type="checkbox" class="check" ${t.done ? "checked" : ""}>
@@ -90,7 +89,6 @@ function render() {
                     <button class="de">Delete</button>
                 </div>
             </li>
-        </ul>
         `;
     });
 
